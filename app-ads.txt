@@ -1,5 +1,1 @@
-# This is a placeholder for your app-ads.txt file
-# When you register with an ad network (like AdMob, Unity Ads, etc.)
-# they will provide you with a line of text to place here.
-# Example format:
-# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+google.com, pub-2823913642374635, DIRECT, f08c47fec0942fa0
