@@ -10,6 +10,35 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .language-switcher {
+            margin-left: 20px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            color: inherit;
+            font-family: inherit;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+        }
+        .language-switcher option {
+            background: #1a1a1a;
+            color: #fff;
+        }
+        [data-theme="light"] .language-switcher option {
+            background: #fff;
+            color: #000;
+        }
+        [data-theme="light"] .language-switcher {
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            background: rgba(0, 0, 0, 0.05);
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
     <div class="background-grid"></div>
@@ -22,7 +51,16 @@
             </div>
             <nav class="nav-links">
                 <a href="index.html">Home</a>
-                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                
+                <select id="language-select" class="language-switcher" aria-label="Select Language">
+                    <option value="en">English</option>
+                    <option value="es-mx">Español (MX)</option>
+                    <option value="de">Deutsch</option>
+                    <option value="fr">Français</option>
+                    <option value="pt-br">Português (BR)</option>
+                </select>
+
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme" style="margin-left: 15px;">
                     <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
                     <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun" style="display: none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
                 </button>
@@ -31,25 +69,36 @@
     </header>
 
     <main class="content-page">
-        <h1>Privacy Policy</h1>
-        <p class="last-updated">Last Updated: August 2026</p>
+        <h1 data-i18n="title">Privacy Policy</h1>
+        <p class="last-updated" data-i18n="lastUpdated">Last updated: August 20, 2026</p>
 
         <div class="prose">
-            <p>Pallo Labs built the QuotePost app as a Free app. This SERVICE is provided by Pallo Labs at no cost and is intended for use as is.</p>
-            <p>This page is used to inform visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my Service.</p>
+            <p data-i18n="intro">By using our application ("the Application", "QuotePost" or "Frases para Redes"), you agree to the information collection and use practices described in this Privacy Policy.</p>
 
-            <h2>Information Collection and Use</h2>
-            <p>For a better experience, while using our Service, I may require you to provide us with certain personally identifiable information. The information that I request will be retained on your device and is not collected by me in any way.</p>
-            <p>The app does use third-party services that may collect information used to identify you.</p>
+            <h2 data-i18n="section1Title">1. Information Collection and Use</h2>
+            <p data-i18n="section1P1">Our Application has been designed with respect for your privacy. We do not require you to register or directly collect personally identifiable information (such as your name, email, or phone number) so that you can use the core image editing and creation features.</p>
+            <p data-i18n="section1P2">For the operation of certain features, the Application interacts with the following services:</p>
+            <ul>
+                <li data-i18n="section1L1"><strong>Local Storage:</strong> The Application requests storage permissions (or access to your gallery) exclusively so that you can save your final designs on your device or use your own photos as backgrounds. The images in your "Drafts" are saved locally on your phone.</li>
+                <li data-i18n="section1L2"><strong>Pexels API:</strong> We use the Pexels service to provide you with the online image bank. Your image search terms are sent anonymously to Pexels to return results. You can check the Pexels privacy policy on their official website.</li>
+            </ul>
 
-            <h2>Log Data</h2>
-            <p>I want to inform you that whenever you use my Service, in a case of an error in the app I collect data and information (through third-party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol ("IP") address, device name, operating system version, the configuration of the app when utilizing my Service, the time and date of your use of the Service, and other statistics.</p>
+            <h2 data-i18n="section2Title">2. Third-Party Service Providers (Ads and Analytics)</h2>
+            <p data-i18n="section2P1">The Application uses third-party services that may collect information used to identify you in order to show personalized ads and report errors (crashes).</p>
+            <p data-i18n="section2P2">We use Google AdMob to show advertising. Google AdMob may collect and use advertising data (such as your device's advertising ID) and other anonymous information to show relevant ads.</p>
+            <p data-i18n="section2P3">You can learn more about how Google uses your data by visiting Google's privacy policy and terms: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></p>
 
-            <h2>Changes to This Privacy Policy</h2>
-            <p>I may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Privacy Policy on this page.</p>
+            <h2 data-i18n="section3Title">3. Security</h2>
+            <p data-i18n="section3P1">We value your trust in using our Application. Since all your drafts and creations are saved locally on your own device, you are responsible for the physical security of your phone. We do not store your images on external servers.</p>
 
-            <h2>Contact Us</h2>
-            <p>If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at <a href="mailto:contact@domain.com">contact@domain.com</a>.</p>
+            <h2 data-i18n="section4Title">4. Links to Other Sites</h2>
+            <p data-i18n="section4P1">The Application may contain links to other websites (for example, when visiting the profiles of Pexels photographers). If you click on a third-party link, you will be directed to that site. These external sites are not operated by us. Therefore, we strongly advise you to review the Privacy Policy of these websites.</p>
+
+            <h2 data-i18n="section5Title">5. Changes to This Privacy Policy</h2>
+            <p data-i18n="section5P1">We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+
+            <h2 data-i18n="section6Title">6. Contact</h2>
+            <p data-i18n="section6P1">If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at: <a href="mailto:rinconfutbolero82@gmail.com">rinconfutbolero82@gmail.com</a></p>
         </div>
     </main>
 
@@ -59,6 +108,7 @@
         </div>
     </footer>
 
+    <script src="translations.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
