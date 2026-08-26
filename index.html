@@ -22,7 +22,7 @@
     <header class="navbar">
         <div class="container nav-content">
             <div class="logo">
-                <span class="logo-accent">&lt;/&gt;</span> PalloLabs
+                <a style="text-decoration: none; color: inherit;" href="index.html"><span class="logo-accent">&lt;/&gt;</span> PalloLabs</a>
             </div>
             <nav class="nav-links">
                 <a href="#apps">Apps</a>
@@ -83,7 +83,7 @@
                     </div>
                 </div>
                 <div class="app-action">
-                    <button class="btn btn-primary" onclick="openModal('quotePostModal')">Learn More</button>
+                    <button class="btn btn-primary" onclick="openModal('quotePostModal')">Learn more</button>
                     <a href="#" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
                         <img src="images/misc/playstore.png" alt="Google Play Store" class="playstore-icon">
                         Free download
@@ -106,7 +106,6 @@
                 <ul>
                     <li><a href="privacy.html">Privacy Policy</a></li>
                     <li><a href="child-safety.html">Child Safety Policy</a></li>
-                    <li><a href="app-ads.txt" target="_blank">app-ads.txt</a></li>
                 </ul>
             </div>
             <div class="footer-contact">
@@ -132,9 +131,10 @@
                 <img src="images/apps/quotepost/icons/QuotePost_icon.png" alt="Quote Post Icon" class="modal-app-icon">
             </div>
             <img src="images/apps/quotepost/app icon_1024x500.png" alt="QuotePost Hero" class="modal-hero-img">
-            <p class="modal-desc">Create beautiful quote images in seconds. Express your favorite phrases with sleek
+            <p class="modal-desc" style="margin-bottom: 12px;">Create beautiful quote images in seconds. Express your favorite phrases with sleek
                 designs. Edit the text, colors, fonts, backgrounds, and more. The perfect tool for influencers,
                 bloggers, and anyone who wants to share inspiring quotes with their audience.</p>
+            
             <div class="modal-screenshots">
                 <img src="images/apps/quotepost/screenshots/1.jpg" alt="Screenshot 1" onclick="openGallery(0)">
                 <img src="images/apps/quotepost/screenshots/2.jpg" alt="Screenshot 2" onclick="openGallery(1)">
@@ -174,13 +174,20 @@
     <script>
         function openModal(modalId) {
             document.getElementById(modalId).classList.add('show');
+            document.body.style.overflow = 'hidden';
         }
         function closeModal(modalId) {
             document.getElementById(modalId).classList.remove('show');
+            if (!document.querySelector('.modal.show')) {
+                document.body.style.overflow = '';
+            }
         }
         window.onclick = function (event) {
             if (event.target.classList.contains('modal')) {
                 event.target.classList.remove('show');
+                if (!document.querySelector('.modal.show')) {
+                    document.body.style.overflow = '';
+                }
             }
         }
 
